@@ -12,6 +12,7 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
 
         }
         td, th {
@@ -19,11 +20,31 @@
            padding: 10px;  
 
         }
+
+        caption {
+            font-size: 1.5EM ;
+            font-weight: bold;
+            padding: 10PX;
+            background-color: lightslategray;
+        }
         thead, tfoot {
             background-color: rgb(37, 31, 23);
             color: white;
 
         }
+        thead > tr > th {
+            position: sticky;
+            top: 0;
+            background-color: rgb(37, 31, 23);
+
+        }
+
+
+        tbody > tr:nth-child(odd) {
+        background-color: lightgray;
+        }
+
+
         td.num {
             text-align: right;
 
@@ -33,10 +54,11 @@
 <body>
     <h1>Tabelas Grandes</h1>
     <table>
+        <caption>População da cidades brasileiras</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
          </theade>
         <tbody>
@@ -75,7 +97,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th> Total de habitantes</th>
+                <th scope="row"> Total de habitantes</th>
                 <td class="num">124 000 000</td>
             </tr>
         </tfoot>
